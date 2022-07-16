@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.1">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./public/css/addReview.css" />
+    <title>Review</title>
+</head>
+
+<body>
+    <!-- Trigger/Open The Modal -->
+<button id="myBtn">Review</button>
+
+  <!-- Modal content -->
+  <!-- <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div> -->
+    <div class="modal" id="reviewModal"  tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h5 class="modal-title" id="reviewModalLabel">My review </h5>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        <textarea id="review-text"></textarea>
+                        <label for="customRange2" class="form-label">Theater Rating:</label>
+                        <input type="range" class="form-range" min="1" max="5" id="theater-rating">
+                        <output id="theater-output"></output>
+                        <label for="customRange2" class="form-label">Seating Rating:</label>
+                        <input type="range" class="form-range" min="1" max="5" id="seating-rating">
+                        <output id="seating-output"></output>
+                        <label for="customRange2" class="form-label">Concession Rating:</label>
+                        <input type="range" class="form-range" min="1" max="5" id="concession-rating">
+                        <output id="concession-output"></output>
+                        <label for="customRange2" class="form-label">Audio Rating:</label>
+                        <input type="range" class="form-range" min="1" max="5" id="audio-rating">
+                        <output id="audio-output"></output>
+                        <label for="customRange2" class="form-label">Video Rating:</label>
+                        <input type="range" class="form-range" min="1" max="5" id="video-rating">
+                        <output id="video-output"></output>
+                        <label for="customRange2" class="form-label">Parking Rating:</label>
+                        <input type="range" class="form-range" min="1" max="5" id="parking-rating">
+                        <output id="parking-output"></output>
+                        <label for="customRange2" class="form-label">Service Rating:</label>
+                        <input type="range" class="form-range" min="1" max="5" id="service-rating">
+                        <output id="service-output"></output>
+                        <label for="customRange2" class="form-label">Crowd Rating:</label>
+                        <input type="range" class="form-range" min="1" max="5" id="crowd-rating">
+                        <output id="crowd-output"></output>
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- <span class="close">&times;</span> -->
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="./public/js/addReview.js"></script>
+
+</html>

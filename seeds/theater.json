@@ -1,0 +1,178 @@
+[
+  {
+    "name": "AMC The Grove 14",
+    "address": "189 The Grove Dr, Los Angeles, CA 90036",
+    "seatingrating": 4,
+    "concessionsrating": 5,
+    "audiorating": 4,
+    "videorating": 3,
+    "parkingrating": 2,
+    "servicerating": 4,
+    "crowdrating": 2
+  },
+  {
+    "name": "AMC Norwalk 20",
+    "address": "12300 Civic Center Dr, Norwalk, CA 90650",
+    "seatingrating": 3,
+    "concessionsrating": 2,
+    "audiorating": 4,
+    "videorating": 5,
+    "parkingrating": 4,
+    "servicerating": 3,
+    "crowdrating": 4
+  },
+  {
+    "name": "AMC Puente Hills 20",
+    "address": "1560 S Azusa Ave, City of Industry, CA 91748",
+    "seatingrating": 2,
+    "concessionsrating": 3,
+    "audiorating": 3,
+    "videorating": 2,
+    "parkingrating": 5,
+    "servicerating": 4,
+    "crowdrating": 2
+  },
+  {
+    "name": "AMC Victoria Gardens 12",
+    "address": "12600 N Mainstreet, Rancho Cucamonga, CA 91739",
+    "seatingrating": 3,
+    "concessionsrating": 4,
+    "audiorating": 2,
+    "videorating": 3,
+    "parkingrating": 4,
+    "servicerating": 5,
+    "crowdrating": 2
+  },
+  {
+    "name": "Regal Edwards Corona Crossings",
+    "address": "2650 Tuscany St, Corona, CA 92881",
+    "seatingrating": 2,
+    "concessionsrating": 3,
+    "audiorating": 2,
+    "videorating": 4,
+    "parkingrating": 5,
+    "servicerating": 4,
+    "crowdrating": 3
+  },
+  {
+    "name": "Regal Edwards Eastvale Gateway",
+    "address": "12285 Limonite Ave, Eastvale, CA 91752",
+    "seatingrating": 2,
+    "concessionsrating": 3,
+    "audiorating": 4,
+    "videorating": 5,
+    "parkingrating": 2,
+    "servicerating": 3,
+    "crowdrating": 1
+  },
+  {
+    "name": "Regal Edwards Ontario Palace",
+    "address": "4900 E 4th St, Ontario, CA 91764",
+    "seatingrating": 3,
+    "concessionsrating": 2,
+    "audiorating": 4,
+    "videorating": 4,
+    "parkingrating": 3,
+    "servicerating": 4,
+    "crowdrating": 4
+  },
+  {
+    "name": "Century Stadium 25 and XD",
+    "address": "1701 W Katella Ave, Orange, CA 92867",
+    "seatingrating": 2,
+    "concessionsrating": 3,
+    "audiorating": 3,
+    "videorating": 4,
+    "parkingrating": 3,
+    "servicerating": 3,
+    "crowdrating": 3
+  },
+  {
+    "name": "Regal Foothill Towne Center",
+    "address": "26602 Towne Centre Dr, Foothill Ranch, CA 92610",
+    "seatingrating": 2,
+    "concessionsrating": 3,
+    "audiorating": 4,
+    "videorating": 5,
+    "parkingrating": 2,
+    "servicerating": 3,
+    "crowdrating": 4
+  },
+  {
+    "name": "Cinemark Movies 8",
+    "address": "5546 Philadelphia St, Chino, CA 91710",
+    "seatingrating": 3,
+    "concessionsrating": 4,
+    "audiorating": 2,
+    "videorating": 4,
+    "parkingrating": 3,
+    "servicerating": 2,
+    "crowdrating": 4
+  },
+  {
+    "name": "Regal Garden Grove",
+    "address": "9741 Chapman Ave, Garden Grove, CA 92841",
+    "seatingrating": 2,
+    "concessionsrating": 3,
+    "audiorating": 3,
+    "videorating": 4,
+    "parkingrating": 3,
+    "servicerating": 3,
+    "crowdrating": 2
+  },
+  {
+    "name": "Century Huntington Beach and XD",
+    "address": "7777 Edinger Ave Suite 170, Huntington Beach, CA 92647",
+    "seatingrating": 2,
+    "concessionsrating": 3,
+    "audiorating": 3,
+    "videorating": 3,
+    "parkingrating": 2,
+    "servicerating": 3,
+    "crowdrating": 2
+  },
+  {
+    "name": "Harkins Theatres Chino Hills 18",
+    "address": "Crossroads Entertainment Center, 3070 Chino Ave, Chino Hills, CA 91709",
+    "seatingrating": 3,
+    "concessionsrating": 3,
+    "audiorating": 4,
+    "videorating": 4,
+    "parkingrating": 2,
+    "servicerating": 3,
+    "crowdrating": 2
+  },
+  {
+    "name": "Regal Edwards Anaheim Hills",
+    "address": "8030 E Santa Ana Canyon Rd, Anaheim Hills, CA 92808",
+    "seatingrating": 2,
+    "concessionsrating": 3,
+    "audiorating": 3,
+    "videorating": 4,
+    "parkingrating": 5,
+    "servicerating": 3,
+    "crowdrating": 4
+  },
+  {
+    "name": "AMC Tustin 14 The District",
+    "address": "2457 Park Ave, Tustin, CA 92782",
+    "seatingrating": 2,
+    "concessionsrating": 3,
+    "audiorating": 4,
+    "videorating": 3,
+    "parkingrating": 4,
+    "servicerating": 3,
+    "crowdrating": 3
+  },
+  {
+    "name": "AMC DINE-IN Fullerton 20",
+    "address": "1001 S Lemon St, Fullerton, CA 92832",
+    "seatingrating": 4,
+    "concessionsrating": 3,
+    "audiorating": 3,
+    "videorating": 3,
+    "parkingrating": 4,
+    "servicerating": 3,
+    "crowdrating": 2
+  }
+]

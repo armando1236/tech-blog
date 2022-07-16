@@ -1,0 +1,43 @@
+[
+  {
+    "name": "Test",
+    "email": "test@test.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Sal",
+    "email": "sal@hotmail.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Quentin",
+    "email": "@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Todd",
+    "email": "Todd23er@aol.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Timothy",
+    "email": "Timmer321@aol.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Rebeccah",
+    "email": "Bekka35@aol.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Ricardo",
+    "email": "rickythekoala@aol.com",
+    "password": "password12345"
+  },
+  {
+    "name": "Smith",
+    "email": "smithkimmy@aol.com",
+    "password": "password12345"
+  }
+
+]
