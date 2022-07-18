@@ -11,7 +11,7 @@ User.hasMany(Post, {
     onDelete: 'CASCADE',
 });
 
-Post.hasmany(Comment,{
+Post.hasMany(Comment,{
     foreignKey: 'post_id',
 })
 

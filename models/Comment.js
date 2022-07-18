@@ -16,13 +16,10 @@ Comment.init(
             allowNull: false,
         },
 
-        date: {
-            type: DataTypes.DATE,
-            defaultValue: Date.now()
-        },
+    
         post_id: {
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model:'post',
                 key: 'id',
@@ -30,7 +27,7 @@ Comment.init(
         },
         user_id: { 
             type: DataTypes.INTEGER,
-            allowNull: false,
+            allowNull: true,
             references: {
                 model:'user',
                 key: 'id',
@@ -40,10 +37,10 @@ Comment.init(
 
     {
         sequelize,
-        timestamps: false,
+       
         freezeTableName: true,
         underscored: true,
-        modelName: 'review',
+        modelName: 'comment',
     }
 );
 
