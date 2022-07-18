@@ -1,19 +1,19 @@
 const router = require('express').Router();
-const { Theater, User, Review } = require('../models');
+const { Comment, User, Post } = require('../models');
 const withAuth = require('../utils/auth');
 const sequelize = require('sequelize')
 
 
 router.get('/', async (req, res) => {
   try {
-    const theaterData = await Theater.findAll({
+    const postData = await Post.findAll({
     });
 
-    const theater = theaterData.map((theater) => theater.get({ plain: true }));
+    const posts = postData.map((posts) => th.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render('homepage', {
-      theater,
+      post,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -21,133 +21,19 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/theaters', async (req, res) => {
+router.get('/post/:id', async (req, res) => {
   try {
-    const theaterAvgs = await Theater.findAll({
-      include: [{
-        model: Review,
-        attributes: [
-          [sequelize.literal(
-            '(SELECT AVG(seatingrating) FROM review)'
-          ),
-            'avgSeatingRating'
-          ],
-          [sequelize.literal(
-            '(SELECT AVG(concessionsrating) FROM review)'
-          ),
-            'avgConcessionsRating'
-          ],
-          [sequelize.literal(
-            '(SELECT AVG(audiorating) FROM review)'
-          ),
-            'avgAudioRating'
-          ],
-          [sequelize.literal(
-            '(SELECT AVG(videorating) FROM review)'
-          ),
-            'avgVideoRating'
-          ],
-          [sequelize.literal(
-            '(SELECT AVG(parkingrating) FROM review)'
-          ),
-            'avgParkingRating'
-          ],
-          [sequelize.literal(
-            '(SELECT AVG(servicerating) FROM review)'
-          ),
-            'avgServiceRating'
-          ],
-          [sequelize.literal(
-            '(SELECT AVG(crowdrating) FROM review)'
-          ),
-            'avgCrowdRating'
-          ],
-          [sequelize.literal(
-            '(SELECT AVG(crowdrating + servicerating + parkingrating + videorating + audiorating + concessionsrating + seatingrating)/7 FROM review)'
-          ),
-            'masterRating'
-          ],
-        ]
-      }]
-    });
-    const theaters = theaterAvgs.map(theater => theater.get({ plain: true }))
-    res.render('theaters', {
-      theaters,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/theater/:id', async (req, res) => {
-  try {
-    // const reviewsRender = await Review.findAll({
-    //     where: {
-    //         theater_id: req.params.id
-    //     },
-    //     plain: true,
-    //     })
-    //     console.log('Reviews Start Here')
-    //     console.log('--------------------------------------')
-    //     console.log(req.params.id)
-    const ratingAvgs = await Review.findAll({
-      where: {
-        theater_id: req.params.id,
-      },
-      plain: true,
-      include: [{
-        model: Theater, include: [Review]}
-      ],
-      attributes: [
-        [sequelize.literal(
-          '(SELECT AVG(seatingrating) FROM review)'
-        ),
-          'avgSeatingRating'
-        ],
-        [sequelize.literal(
-          '(SELECT AVG(concessionsrating) FROM review)'
-        ),
-          'avgConcessionsRating'
-        ],
-        [sequelize.literal(
-          '(SELECT AVG(audiorating) FROM review)'
-        ),
-          'avgAudioRating'
-        ],
-        [sequelize.literal(
-          '(SELECT AVG(videorating) FROM review)'
-        ),
-          'avgVideoRating'
-        ],
-        [sequelize.literal(
-          '(SELECT AVG(parkingrating) FROM review)'
-        ),
-          'avgParkingRating'
-        ],
-        [sequelize.literal(
-          '(SELECT AVG(servicerating) FROM review)'
-        ),
-          'avgServiceRating'
-        ],
-        [sequelize.literal(
-          '(SELECT AVG(crowdrating) FROM review)'
-        ),
-          'avgCrowdRating'
-        ],
-        [sequelize.literal(
-          '(SELECT AVG(crowdrating + servicerating + parkingrating + videorating + audiorating + concessionsrating + seatingrating)/7 FROM review)'
-        ),
-          'masterRating'
-        ],
+    const singlePost = await Post.findByPk({
+      include: [
+        User, 
+        { 
+          model: Comment,
+          include: [User]
+        }
       ]
     })
-    // const reviews = Review.findAll({
-    //   where: {
-    //     theater_id: req.params.id,
-    //   },
-    // })
-    // console.log(reviews)
+  
+   
     const ratingsPlain = ratingAvgs.get({ plain: true })
     console.log(ratingsPlain);
     res.render('theater',
