@@ -1,15 +1,15 @@
 const sequelize = require('../config/connection');
-const { User, Theater, Review } = require('../models');
+const { User, Post, Comment } = require('../models');
 
 const userData = require('./userData.json');
-const reviewData = require('./reviews.json');
-const theaterData = require('./theater.json')
+const postData = require('./post.json')
+const commentData = require('./comments.json');
 
 const seedDatabase = () => {
   return sequelize.sync({ force: true }).then(() => {
     User.bulkCreate(userData).then(() => {
-      Theater.bulkCreate(theaterData).then(() => {
-        Review.bulkCreate(reviewData).then(() => {
+      Post.bulkCreate(postData).then(() => {
+      Comment.bulkCreate(commentData).then(() => {
           console.log('All Seeds Planted');
         });
       });

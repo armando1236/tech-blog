@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Comment extends Model { }
  
-Review.init(
+Comment.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -14,6 +14,11 @@ Review.init(
         content:{
             type: DataTypes.STRING,
             allowNull: false,
+        },
+
+        date: {
+            type: DataTypes.DATE,
+            defaultValue: Date.now()
         },
         post_id: {
             type: DataTypes.INTEGER,
