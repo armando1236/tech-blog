@@ -10,11 +10,11 @@ router.get('/', async (req, res) => {
       include:[User]
     });
 
-    const posts = postData.map((posts) => th.get({ plain: true }));
-
+    const posts = postData.map((posts) => posts.get({ plain: true }));
+console.log(posts);
     // Pass serialized data and session flag into template
     res.render('homepage', {
-      post,
+      posts,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -24,7 +24,7 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
   try {
-    const singlePostData = await Post.findByPk({
+    const singlePostData = await Post.findByPk(req.params.id,{
       include: [
         User, 
         { 
@@ -36,8 +36,8 @@ router.get('/post/:id', async (req, res) => {
   
    if(singlePostData){
      const singlePost = singlePostData.get({ plain:true})
-     res.render('single-post',
-    singlePost)
+     console.log(singlePost)
+     res.render('single-post', singlePost)
    }
 
 

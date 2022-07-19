@@ -1,61 +1,27 @@
 const router = require('express').Router();
-const { response } = require('express');
-const res = require('express/lib/response');
-const sequelize = require('sequelize')
+
+
+
 const { User, Post } = require('../../models');
-const { getAttributes } = require('../../models/User');
+
 const withAuth = require('../../utils/auth');
 
 // /api/theater/13
 
-router.get('/:id', async (req, res) => {
-    try {
-        const postRender = await Post.findAll({
-            where: {
-                user_id: req.params.id
-            },
-            plain: true,
-            })
 
-            // console.log('Post Starts Here')
-            // res.json(postRender)
-            // console.log('--------------------------------------')
-            // console.log(req.params.id)}
-            include: [
-                {
-                    model: User,
-                    attributes: ['username']
-                },
-                {
-                    model: Comment,
-                    attributes: ['id', 'content',  'post_id', 'user_id'],
-                    include: {
-                        model: User,
-                        attributes: ['name']
-                    }
-                }
-            ]
-        });
-        .then(dbPostData => res.json(dbPostData))
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-    });
-        router.post('/:id', withAuth, async (req, res)=>{
+        router.post('/', withAuth, async (req, res)=>{
             try{
                 console.log(req.body);
                 const newPost = await Post.create({
-                    ...req.body,
                     title: req.body.title,
                     content: req.body.content,
                     user_id: req.session.user_id,
                 });
 
-                res.status(200).json(newReview);
+                res.status(200).json(newPost);
             } catch (err) {
                 console.log(err);
-                res.status(400).json(err);
+                res.status(500).json(err);
             }
         });
 
@@ -64,7 +30,7 @@ router.get('/:id', async (req, res) => {
                 const postData = await Post.destroy({
                     where: {
                         id: req.params.id,
-                        user_id: req.session.user_id,
+                       
                     }
                 });
                 if (!postData) {
@@ -72,6 +38,27 @@ router.get('/:id', async (req, res) => {
                     return;
                 }
                 res.status(200).json(postData);
+            } catch (err) {
+                res.status(500).json(err);
+            }
+            
+        });
+
+        router.put('/:id', withAuth, async (req, res) => {
+            try{
+                const postData = await Post.update(
+                    req.body,
+                    {where: {
+                        id: req.params.id,
+                       
+                    }
+                }
+                );
+                if (postData.affectedRows>0) {
+                    res.status(200).json(postData);
+                    return;
+                }else{
+                res.status(400).json({ message: 'This post cannot be updated!'});}
             } catch (err) {
                 res.status(500).json(err);
             }

@@ -1,103 +1,26 @@
-<div class="bg-secondary">
-    <div class="container-xl">
-        <nav class="navbar bg-dark  border border-secondary">
-            <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1 fs-1 text-white">{{theater.name}}</span>
-            </div>
-        </nav>
-        <div class="d-flex w-100 justify-content-between">
-            <small class="m-3">{{theater.address}}</small>
-        </div>
-        <h3 class='m-2'>Overall Rating: {{masterRating}}</h3>
-        </button>
-        </h2>
-        <div>
-            <ul class="list-group list-group-flush rounded border border-secondary">
-                <li class="list-group-item bg-dark text-white">Seating: {{avgSeatingRating}}</li>
-                <li class="list-group-item bg-dark text-white">Concessions: {{avgConcessionsRating}}</li>
-                <li class="list-group-item bg-dark text-white">Audio: {{avgAudioRating}}</li>
-                <li class="list-group-item bg-dark text-white">Video: {{avgVideoRating}}</li>
-                <li class="list-group-item bg-dark text-white">Parking: {{avgParkingRating}}</li>
-                <li class="list-group-item bg-dark text-white">Service: {{avgServiceRating}}</li>
-                <li class="list-group-item bg-dark text-white">Crowd: {{avgCrowdRating}}</li>
-            </ul>
-        </div>
+<div class="post-preview">
+        <a href="/post/{{id}}">
+            <h2 class="post-title" id={{id}}>{{title}}</h2>
+        </a>
+        <h3 class="post-subtitle">{{content}}</h3>
+     <div class="post-meta">
+        Posted by
+        <p>{{user.name}}</p>
+        <p>{{createdAt}}</p>
     </div>
+    <form>
+        text area and button. Link a js file that has clickhandler to submit comment. script tag bottom of pg. js file in public js folder...name it "comment.js"
+        this file will have fetch post request which will go to '/api/comments'  send over post id, user id...post id from front end    window.location  do some dot split 
+        functionality that creates an array....split at the forward slash and grab last element of the array.  array.length -1 which will give me the last element (id in url)
+        get user id from req.sessions....already in project code.
 
-    {{#each theater.reviews as |review|}}
-    <div class='review-box d-flex justify-content-center flex-wrap bg-dark text-white col-10 text-center m-5'>
-        <h3 class="m-4"> Review: </h3>
-        <h4 class=" mt-4">{{review.reviewtext}}</h4>
-    </div>
+fetch request to post a blog.....end point '/api/posts' send over req.body.title
+    </form>
+    {{#each comments as |comment|}}
     <div>
-        <ul class="col-12 list-group list-group-horizontal mt-2 bg-dark text-white border border-secondary ">
-            <li class="list-group-item bg-dark text-white flex-fill">Seating: {{review.seatingrating}}</li>
-            <li class="list-group-item bg-dark text-white flex-fill">Concessions: {{review.concessionsrating}}</li>
-            <li class="list-group-item bg-dark text-white flex-fill">Audio: {{review.audiorating}}</li>
-            <li class="list-group-item bg-dark text-white flex-fill">Video: {{review.videorating}}</li>
-            <li class="list-group-item bg-dark text-white flex-fill">Parking: {{review.parkingrating}}</li>
-            <li class="list-group-item bg-dark text-white flex-fill">Service: {{review.servicerating}}</li>
-            <li class="list-group-item bg-dark text-white flex-fill">Crowd: {{review.crowdrating}}</li>
-        </ul>
+       <p>{{comment.content}}</p> 
+        <p>{{comment.user.name}}</p> 
+         <p>{{comment.createdAt}}</p> 
     </div>
     {{/each}}
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reviewModal">
-        Add Review
-    </button>
-
-    <!-- Modal -->
-    <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form id="review-form">
-                    <div class="modal-body">
-                        <label for="customRange2" class="form-label">Theater Rating:</label>
-                        <input type="range" class="form-range" min="1" max="5" id="theater-rating">
-                        <output id="theater-output"></output>
-                        <label for="customRange2" class="form-label">Seating Rating:</label>
-                        <input type="range" class="form-range" min="1" max="5" id="seating-rating">
-                        <output id="seating-output"></output>
-                        <label for="customRange2" class="form-label">Concession Rating:</label>
-                        <input type="range" class="form-range" min="1" max="5" id="concession-rating">
-                        <output id="concession-output"></output>
-                        <label for="customRange2" class="form-label">Audio Rating:</label>
-                        <input type="range" class="form-range" min="1" max="5" id="audio-rating">
-                        <output id="audio-output"></output>
-                        <label for="customRange2" class="form-label">Video Rating:</label>
-                        <input type="range" class="form-range" min="1" max="5" id="video-rating">
-                        <output id="video-output"></output>
-                        <label for="customRange2" class="form-label">Parking Rating:</label>
-                        <input type="range" class="form-range" min="1" max="5" id="parking-rating">
-                        <output id="parking-output"></output>
-                        <label for="customRange2" class="form-label">Service Rating:</label>
-                        <input type="range" class="form-range" min="1" max="5" id="service-rating">
-                        <output id="service-output"></output>
-                        <label for="customRange2" class="form-label">Crowd Rating:</label>
-                        <input type="range" class="form-range" min="1" max="5" id="crowd-rating">
-                        <output id="crowd-output"></output>
-                        <textarea id="review-text" style="width: 450px; height:200px;"></textarea>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save-btn">Save
-                            changes</button>
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 </div>
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-    crossorigin="anonymous"></script>
-    <script src="/js/modal.js"></script>
