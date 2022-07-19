@@ -2,19 +2,19 @@
 const router = require('express').Router();
 const { response } = require('express');
 const sequelize = require('sequelize')
-const { Review } = require('../../models');
+const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // /theater/1
 router.post('/', async (req, res) => {
     try {
         console.log(req.body);
-        const newReview = await Review.create({
+        const newComment = await Comment.create({
             ...req.body,
             user_id: req.session.user_id,
         });
 
-        res.status(200).json(newReview);
+        res.status(200).json(newComment);
     } catch (err) {
         console.log(err);
         res.status(400).json(err);
@@ -46,19 +46,19 @@ router.post('/', async (req, res) => {
 
 router.delete('/:id', withAuth, async (req, res) => {
     try {
-        const reviewData = await Review.destroy({
+        const commentData = await Comment.destroy({
             where: {
                 id: req.params.id,
                 user_id: req.session.user_id,
             },
         });
 
-        if (!reviewData) {
-            res.status(404).json({ message: 'This review cannot be deleted' });
+        if (!commentData) {
+            res.status(404).json({ message: 'This comment cannot be deleted' });
             return;
         }
 
-        res.status(200).json(reviewData);
+        res.status(200).json(commentData);
     } catch (err) {
         res.status(500).json(err);
     }

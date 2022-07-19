@@ -7,6 +7,7 @@ const sequelize = require('sequelize')
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll({
+      include:[User]
     });
 
     const posts = postData.map((posts) => th.get({ plain: true }));
@@ -23,7 +24,7 @@ router.get('/', async (req, res) => {
 
 router.get('/post/:id', async (req, res) => {
   try {
-    const singlePost = await Post.findByPk({
+    const singlePostData = await Post.findByPk({
       include: [
         User, 
         { 
@@ -33,13 +34,14 @@ router.get('/post/:id', async (req, res) => {
       ]
     })
   
+   if(singlePostData){
+     const singlePost = singlePostData.get({ plain:true})
+     res.render('single-post',
+    singlePost)
+   }
+
+
    
-    const ratingsPlain = ratingAvgs.get({ plain: true })
-    console.log(ratingsPlain);
-    res.render('theater',
-      ratingsPlain,
-      // reviews
-    );
     
   } catch (err) {
     res.status(400).json(err);
@@ -47,24 +49,7 @@ router.get('/post/:id', async (req, res) => {
 })
 
 
-  router.get('/homepage', withAuth, async (req, res) => {
-    try {
-      // Find the logged in user based on the session ID
-      const userData = await User.findByPk(req.session.user_id, {
-        // attributes: { exclude: ['password'] },
-        // include: [{ model: Theater }],
-      });
-
-      const user = userData.get({ plain: true });
-
-      res.render('homepage', {
-        ...user,
-        logged_in: true
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+  
 
   router.get('/login', (req, res) => {
     // If the user is already logged in, redirect the request to another route
