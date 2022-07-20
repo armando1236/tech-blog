@@ -8,14 +8,19 @@
         <p>{{user.name}}</p>
         <p>{{createdAt}}</p>
     </div>
-    <form>
-        text area and button. Link a js file that has clickhandler to submit comment. script tag bottom of pg. js file in public js folder...name it "comment.js"
+        {{!-- text area and button. Link a js file that has clickhandler to submit comment. script tag bottom of pg. js file in public js folder...name it "comment.js"
         this file will have fetch post request which will go to '/api/comments'  send over post id, user id...post id from front end    window.location  do some dot split 
         functionality that creates an array....split at the forward slash and grab last element of the array.  array.length -1 which will give me the last element (id in url)
         get user id from req.sessions....already in project code.
 
-fetch request to post a blog.....end point '/api/posts' send over req.body.title
+fetch request to post a blog.....end point '/api/posts' send over req.body.title --}}
+    <form>
+        <textarea id="userComment"  style="width: 500px; height: 200px;"></textarea>
+    
     </form>
+    <div>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save-btn">Submit!</button>
+    </div>
     {{#each comments as |comment|}}
     <div>
        <p>{{comment.content}}</p> 
