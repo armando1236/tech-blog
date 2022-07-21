@@ -1,113 +1,4 @@
-/* header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
-}
-
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
-}
-
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-} */
-/* homepage experiment BELOW */
-
-
-
-/* /* #background-image  {
-    /* width: 100px;
-    height: 100px; */
-    /* background: red;
-    position: relative;
-    animation-name: mymove;
-    animation-duration: 5s;
-  } */
-  
-  /* @keyframes mymove {
-    from {bottom: 0px;}
-    to {top: 200px;}
-  } */ 
-
-  /* #background-image {
-    transition: all 0.8s ease;
-    /* background: red; */
-    /* margin-top: 300px;
-    margin-bottom: 300px;
-  }
-  #background-image:hover {
-    /* background: green; */
-    /* margin-top: 10px;
-    margin-bottom: 10px;
-  }  */
-   .box{ 
-    width: 100%;
-    height: 50%;            
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation-name: intro-b;
-    animation-duration: 4s;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
-    
-}
-
-.review-box {
-  border-radius: 15px;
-  background-color: #1a1a1a;
-  color: #000000;
-}
-
-@keyframes intro-b {
-    from {top: 0px;}
-    to {top: -350px;}
-    } 
-
-.box-two{
-    width: 100%;
-    height: 50%;            
-    position: absolute;
-    bottom: 0px;
-    left: 0;
-    animation-name: intro-a;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
-    animation-delay: 1s;
-  }
-  
-  
-  @keyframes intro-a {
-  from {bottom: 0px;}
-  to {bottom: -100px;} 
-  }     
-  
-
-
-  
-  
-  /* #start {
-    animation-name: intro-c;
-    animation-duration: 2s;
-    animation-fill-mode: both;
-    animation-delay: 2s;
-    margin-top: -7%;
-    margin-left: -5%;
-    width: 15%;
-    background-color: rgba(221, 221, 28, 0.692);
-  } */
-  
   
   #nav {
     position: relative;
@@ -123,39 +14,7 @@
     animation: pulsate 0.11s ease-in-out infinite alternate; 
   }
   
-  /* font-family: 'Codystar', cursive; */
-  /* font-family: 'Fascinate Inline', cursive; */
-  /* font-family: 'Monofett', cursive;  
-  font-family: 'Limelight', cursive; 
-  /* font-family: 'Bungee Outline', cursive;  */
-  
-  @keyframes pulsate {
-    100% {
-      /* Larger blur radius */
-      text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px #0fa,
-      0 0 80px #0fa,
-      0 0 90px #0fa,
-      0 0 100px #0fa,
-      0 0 150px #0fa;
-    }
-    0% {
-      /* A slightly smaller blur radius */
-      text-shadow:
-      0 0 4px #fff,
-      0 0 10px #fff,
-      0 0 18px #fff,
-      0 0 38px #0fa,
-      0 0 73px #0fa,
-      0 0 80px #0fa,
-      0 0 94px #0fa,
-      0 0 140px #0fa;
-    }
-  }
-  
+
   
   
   
@@ -167,7 +26,11 @@
   }
   
   
-  
+  .post-title {
+    color:black;
+    text-decoration: none;
+    
+  }
   
   
   
