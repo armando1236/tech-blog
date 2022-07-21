@@ -17,12 +17,12 @@ const response = await fetch('/api/posts', {
     body: JSON.stringify({title, content}),
     headers: {
         'Content-Type': 'application/json',
-    },
-}):
-if(response.ok){
+        },
+    }): 
+    if(response.ok){
     console.log('worked')
     window.location.reload();
 }
 }
 
-dashBoardForm.addEventListener('submit', )
+dashBoardForm.addEventListener('submit',submitComment)
