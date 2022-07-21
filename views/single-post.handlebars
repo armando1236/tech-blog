@@ -14,13 +14,13 @@
         get user id from req.sessions....already in project code.
 
 fetch request to post a blog.....end point '/api/posts' send over req.body.title --}}
-    <form>
+    <form id="comment-form">
         <textarea id="userComment"  style="width: 500px; height: 200px;"></textarea>
     
+    
+        <button type="submit" class="btn btn-primary"  id="save-btn">Submit!</button>
+    
     </form>
-    <div>
-        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="save-btn">Submit!</button>
-    </div>
     {{#each comments as |comment|}}
     <div>
        <p>{{comment.content}}</p> 
@@ -29,3 +29,5 @@ fetch request to post a blog.....end point '/api/posts' send over req.body.title
     </div>
     {{/each}}
 </div>
+
+<script src="/js/comment.js"></script>

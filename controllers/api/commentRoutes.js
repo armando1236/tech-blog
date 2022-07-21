@@ -13,6 +13,7 @@ router.post('/', async (req, res) => {
             ...req.body,
             user_id: req.session.user_id,
         });
+        console.log(newComment);
 
         res.status(200).json(newComment);
     } catch (err) {
