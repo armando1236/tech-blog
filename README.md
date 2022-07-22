@@ -1,7 +1,7 @@
 # tech-blog
 ***
 ## Description
-For this assignment I had to build a CMS-style blog, where developers can publishtheir blog posts and comment on other developers' posts. The site includes a log in and sign up page where a user can input their information. A user can comment on a post. There is also a dashboard button which displays the logged in user's past post. 
+For this assignment I had to build a CMS-style blog, where developers can publish their blog posts and comment on other developers' posts. The site includes a log in and sign up page where a user can input their information securely. Once a user logs in, they can read posts and comment on them. There is also a dashboard button which displays the logged in user's past post. 
 ***
 ## Table of Contents
 - [Installation](#installation)
@@ -12,10 +12,10 @@ For this assignment I had to build a CMS-style blog, where developers can publis
 - [Questions](#questions)
 ***
 ## Installation
-
+No installation is required. 
 ***
 ## Usage
-The site was lauched on Heroku.
+The site was lauched on Heroku. https://git.heroku.com/salty-temple-15964.git
 ***
 ## Contributing
 N/A
@@ -26,5 +26,7 @@ N/A
 No test
 ***
 ## Questions
-- https://github.com/armando1236
+- https://github.com/armando1236/tech-blog.git
 - For additional questions please email me at: amjr86@outlook.com
+
+![image](./public/css/images/tech-blog.png)
