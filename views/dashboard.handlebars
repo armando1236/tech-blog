@@ -8,27 +8,47 @@
   <div class="col-md-6">
     <h3>Create a New Post:</h3>
 
-    
-    
+
+
     <form id="post-form">
-    
-        <span class="input-group-text">Title</span>
-        <textarea  id="titleInput" style="width: 650px;" aria-label="With textarea"></textarea>
-      
-      
-        <textarea id="contentInput"  style="width: 700px; height: 200px;"></textarea>
-    
-    
-        <button type="submit" class="btn btn-primary"  id="save-btn">Submit!</button>
-    
+
+      <h3>Title</h3>
+      <textarea id="titleInput" style="width: 650px;" aria-label="With textarea"></textarea>
+
+      <h3>Post Content</h3>
+      <textarea id="contentInput" style="width: 700px; height: 200px;"></textarea>
+
+
+      <button type="submit" class="btn btn-primary" id="save-btn">Submit!</button>
+
     </form>
+    {{#if posts.length}}
+    {{#each posts as |post|}}
+    <div class="post-preview">
+      <a href="post.html">
+        <a href="/post/{{post.id}}">
+          <h2 class="post-title" id={{post.id}}>{{post.title}}</h2>
+        </a>
+        <h3 class="post-subtitle">{{post.content}}</h3>
+      </a>
+      <div class="post-meta">
+      
+      
+        <p>{{post.createdAt}}</p>
+      </div>
+    </div>
+    {{/each}}
+
+    {{else}}
+    <div>No post to display!</div>
+
+    {{/if}}
 
 
 
 
 
 
-    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/js/dashboard.js"></script>

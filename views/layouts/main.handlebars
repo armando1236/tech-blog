@@ -40,7 +40,11 @@
           {{/if}}
         </div>
         <div class="text-end">
+          <button type="button" class="btn btn-outline-light me-2"><a href="/"
+              style="text-decoration:none">Home</a></button>
           {{#if logged_in}}
+          <button type="button" class="btn btn-warning" style="text-decoration:none"><a href="/dashboard"
+              style="text-decoration:none">Dashboard</a></button>
           <button type="button" id="logout" class="btn btn-outline-light me-2">Logout</button>
           {{else}}
           <button type="button" class="btn btn-outline-light me-2"><a href="/login"
@@ -48,10 +52,6 @@
           <button type="button" class="btn btn-warning" style="text-decoration:none"><a href="/login"
               style="text-decoration:none">Sign-Up</a></button>
           {{/if}}
-          <button type="button" class="btn btn-outline-light me-2"><a href="/"
-              style="text-decoration:none">Home</a></button>
-          <button type="button" class="btn btn-warning" style="text-decoration:none"><a href="/dashboard"
-              style="text-decoration:none">Dashboard</a></button>
           
 
       </div>

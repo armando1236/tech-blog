@@ -1,14 +1,16 @@
 const router = require('express').Router();
+const {  Post } = require('../models');
 
 router.get('/', async (req, res) => {
+    console.log('working');
+    console.log(req.session.user_id);
     try {
       const postData = await Post.findAll({
-        where:{title: req.body.title,
-             content:req.body.content}
+        where:{user_id:req.session.user_id}
       });
-  
-      const posts = postData.map((posts) => posts.get({ plain: true }));
-  console.log(posts);
+  console.log(postData);
+      const posts = postData.map((post) => post.get({ plain: true }));
+  console.log(posts.length);
       // Pass serialized data and session flag into template
       res.render('dashboard', {
         posts,
@@ -18,3 +20,5 @@ router.get('/', async (req, res) => {
       res.status(500).json(err);
     }
   });
+
+  module.exports=router;
