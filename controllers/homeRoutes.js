@@ -38,6 +38,8 @@ router.get('/post/:id', async (req, res) => {
      const singlePost = singlePostData.get({ plain:true})
      console.log(singlePost)
      res.render('single-post', singlePost)
+     
+
    }
 
 
